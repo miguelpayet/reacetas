@@ -9,13 +9,13 @@ class Busqueda {
     }
 
     url() {
-        const url = `${Busqueda.PATH_BASE}${Busqueda.PATH_SEARCH}${this.texto}?${Busqueda.PARAM_FLAGS}${this.flags}`;
+        const url = `${Busqueda.PATH_BASE}${Busqueda.PATH_SEARCH}${this.texto}${Busqueda.PARAM_FLAGS}${this.flags}`;
         return url;
     }
 }
 
 Busqueda.PATH_BASE = 'http://recetadebrownes.xyz';
-Busqueda.PATH_SEARCH = '/palabra/';
+Busqueda.PATH_SEARCH = '/palabra?texto=';
 Busqueda.PARAM_FLAGS = '&flag=';
 
 export default Busqueda

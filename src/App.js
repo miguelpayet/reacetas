@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import SearchForm from './SearchForm.js';
-import SearchFormSimple from './SearchFormSimple.js';
-import SearchFormSeparado from './SearchFormSeparado.js';
 import BusquedaStore from './BusquedaStore.js';
-import ListaRecetas from './ListaRecetas.js';
-
+import ListaRecetas from './ListaRecetas.js'
+ 
 class App extends Component {
 
   constructor() {
@@ -30,13 +28,7 @@ class App extends Component {
         <div className="SearchForm">
           <SearchForm />
         </div>
-        <div className="SearchForm">
-          <SearchFormSimple />
-        </div>
-        <div className="SearchForm">
-          <SearchFormSeparado />
-        </div>
-        <div className="ListaRecetas">
+        <div>
           <ListaRecetas />
         </div>
       </div>

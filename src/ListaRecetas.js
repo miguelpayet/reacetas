@@ -1,6 +1,5 @@
 import React from 'react';
 import BusquedaStore from './BusquedaStore.js';
-//import Busqueda from './Busqueda.js';
 
 class ListaRecetas extends React.Component {
 
