@@ -24,9 +24,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <h2>rest-client</h2>
-        </div>
         <div className="SearchForm">
           <SearchForm />
         </div>

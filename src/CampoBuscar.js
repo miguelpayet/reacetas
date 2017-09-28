@@ -1,6 +1,13 @@
 import React from 'react';
+import MiComponente from './MiComponente.js';
 
-class CampoBuscar extends React.Component {
+class CampoBuscar extends MiComponente {
+
+    constructor() {
+        super();
+        this.state = {texto: ""};
+        this.handleChange = this.handleChange.bind(this);
+    }
 
     handleSubmit(event) {
         console.log("buscar");

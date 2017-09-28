@@ -1,7 +1,6 @@
 import React from 'react';
 import BusquedaActions from './BusquedaActions.js';
 import Busqueda from './Busqueda.js';
-import CampoBuscar from './CampoBuscar.js';
 
 class SearchForm extends React.Component {
 
@@ -28,7 +27,12 @@ class SearchForm extends React.Component {
     render() {
       return (
         <form onSubmit={this.handleSubmit}>
-          <CampoBuscar />
+          <p className="buscar">
+              <input type="text" id="texto" name="texto" placeholder="¿Qué estás buscando?" onChange={this.handleChange} />
+              <button type="submit" className="btn btn-light btn-xs">
+                  <span className="fa fa-search"></span>
+              </button>                
+          </p>
           <p className="buscar">
             <label>
               <input type="checkbox" id="recetas" name="recetas" defaultChecked={this.state.recetas} onChange={this.handleChange} />recetas
