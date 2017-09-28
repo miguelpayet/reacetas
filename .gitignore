@@ -1,21 +1,39 @@
-# See https://help.github.com/ignore-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-
-# testing
-/coverage
-
-# production
-/build
-
-# misc
+*.launch
+.classpath
+.coveralls.yml
 .DS_Store
-.env.local
+.DS_Store
 .env.development.local
-.env.test.local
+.env.local
 .env.production.local
-
-npm-debug.log*
+.env.test.local
+.eslintcache
+*bootstrap*
+*font-awesome*
+*fontawesome-webfont*
+*FontAwesome*
+.project
+.settings/
+/.idea
+/.sass-cache
+/.vscode
+/bower_components
+/build
+/client/node_modules
+/connect.lock
+/coverage
+/dist
+/e2e/*.js
+/e2e/*.map
+/libpeerconnection.log
+/node_modules
+/server/node_modules
+/tmp
+/typings
+client/coverage/*
+npm-debug.log
+stats.json
+testem.log
+Thumbs.db
 yarn-debug.log*
-yarn-error.log*
+yarn-error.log

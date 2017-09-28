@@ -1,0 +1,48 @@
+.App {
+  text-align: left;
+}
+
+.App-header {
+  background-color: #222;
+  height: 1em;
+  padding: 10px;
+  color: white;
+  vertical-align: middle;
+}
+
+.App-header h2 {
+  line-height: 1em;
+  font-size: 20px;
+  margin: 0;
+}
+
+.SearchForm {
+	padding: 20px 0;
+	border-bottom: 2px solid black;
+}
+
+.buscar {
+  text-align: center;
+}
+
+.buscar #texto {
+  width: 300px;
+  height: 38px;
+  line-height: 40px;
+  margin:0;
+  vertical-align: middle;
+}
+
+.buscar button {
+  vertical-align: middle;
+  height: 38px;
+  margin: 0;
+}
+
+.buscar input[type='checkbox'] {
+margin: 0 5px 0 0;
+}
+
+.buscar label {
+margin: 0 10px
+}

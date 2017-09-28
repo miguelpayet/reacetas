@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import './App.css';
-import SearchForm from './SearchForm.js';
-//import SearchFormSimple from './SearchFormSimple.js';
-import SearchFormSeparado from './SearchFormSeparado.js';
+import './css/bootstrap.min.css'; 
+import './css/font-awesome.min.css';
+import './css/App.css';
 import BusquedaStore from './BusquedaStore.js';
-import ListaRecetas from './ListaRecetas.js';
+import ListaRecetas from './ListaRecetas.js'
+import React, { Component } from 'react';
+import SearchForm from './SearchForm.js';
 
 class App extends Component {
 
@@ -30,10 +30,7 @@ class App extends Component {
         <div className="SearchForm">
           <SearchForm />
         </div>
-        <div className="SearchForm">
-          <SearchFormSeparado />
-        </div>
-        <div className="ListaRecetas">
+        <div>
           <ListaRecetas />
         </div>
       </div>
@@ -45,7 +42,4 @@ class App extends Component {
 export default App;
 
 /*
-        <div className="SearchForm">
-          <SearchFormSimple />
-        </div>
 */

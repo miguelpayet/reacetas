@@ -1,6 +1,7 @@
 import React from 'react';
 import BusquedaActions from './BusquedaActions.js';
 import Busqueda from './Busqueda.js';
+import CampoBuscar from './CampoBuscar.js';
 
 class SearchForm extends React.Component {
 
@@ -27,14 +28,8 @@ class SearchForm extends React.Component {
     render() {
       return (
         <form onSubmit={this.handleSubmit}>
-          <p>
-              <label>
-                  buscar
-                  <input type="text" id="texto" name="texto" onChange={this.handleChange} />
-              </label>
-          </p>
-          <p>
-            en
+          <CampoBuscar />
+          <p className="buscar">
             <label>
               <input type="checkbox" id="recetas" name="recetas" defaultChecked={this.state.recetas} onChange={this.handleChange} />recetas
             </label>
@@ -45,7 +40,6 @@ class SearchForm extends React.Component {
               <input type="checkbox" id="categorias" name="categorias" onChange={this.handleChange} />categorias
             </label>
           </p>
-          <input type="submit" value="Submit" />
         </form>
       );
     }

@@ -22,7 +22,6 @@ class ListaRecetas extends React.Component {
     }
 
     onChange(b) {
-        console.log(b.url());
         this.buscar(b);
     }
 
