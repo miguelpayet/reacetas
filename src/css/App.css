@@ -46,3 +46,18 @@ margin: 0 5px 0 0;
 .buscar label {
 margin: 0 10px
 }
+
+div.receta {
+  margin: 1px;
+  border: 1px solid #ddd;
+}
+
+div.receta h1 {
+  font-size: 100%;
+  text-align:center;
+}
+
+div.receta p {
+  font-size: 80%;
+  text-align:justify;
+}

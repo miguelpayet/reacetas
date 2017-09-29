@@ -26,25 +26,29 @@ class SearchForm extends React.Component {
   
     render() {
       return (
-        <form onSubmit={this.handleSubmit}>
-          <p className="buscar">
-              <input type="text" id="texto" name="texto" placeholder="¿Qué estás buscando?" onChange={this.handleChange} />
-              <button type="submit" className="btn btn-light btn-xs">
-                  <span className="fa fa-search"></span>
-              </button>                
-          </p>
-          <p className="buscar">
-            <label>
-              <input type="checkbox" id="recetas" name="recetas" defaultChecked={this.state.recetas} onChange={this.handleChange} />recetas
-            </label>
-            <label>
-              <input type="checkbox" id="ingredientes" name="ingredientes" onChange={this.handleChange} />ingredientes
-            </label>
-            <label>
-              <input type="checkbox" id="categorias" name="categorias" onChange={this.handleChange} />categorias
-            </label>
-          </p>
-        </form>
+        <div className="row">
+          <div className="col-md-12 col-sm-12">
+            <form onSubmit={this.handleSubmit}>
+              <p className="buscar">
+                  <input type="text" id="texto" name="texto" placeholder="¿Qué estás buscando?" onChange={this.handleChange} />
+                  <button type="submit" className="btn btn-light btn-xs">
+                      <span className="fa fa-search"></span>
+                  </button>                
+              </p>
+              <p className="buscar">
+                <label>
+                  <input type="checkbox" id="recetas" name="recetas" defaultChecked={this.state.recetas} onChange={this.handleChange} />recetas
+                </label>
+                <label>
+                  <input type="checkbox" id="ingredientes" name="ingredientes" onChange={this.handleChange} />ingredientes
+                </label>
+                <label>
+                  <input type="checkbox" id="categorias" name="categorias" onChange={this.handleChange} />categorias
+                </label>
+              </p>
+            </form>
+          </div>
+        </div>
       );
     }
   }

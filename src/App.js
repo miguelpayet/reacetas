@@ -1,9 +1,9 @@
+import React, { Component } from 'react';
 import './css/bootstrap.min.css'; 
 import './css/font-awesome.min.css';
 import './css/App.css';
 import BusquedaStore from './BusquedaStore.js';
-import ListaRecetas from './ListaRecetas.js'
-import React, { Component } from 'react';
+import ListaResultados from './ListaResultados.js'
 import SearchForm from './SearchForm.js';
 
 class App extends Component {
@@ -23,12 +23,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App container-fluid">
         <div className="SearchForm">
           <SearchForm />
         </div>
         <div>
-          <ListaRecetas />
+          <ListaResultados />
         </div>
       </div>
     );
