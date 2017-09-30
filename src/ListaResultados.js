@@ -1,6 +1,8 @@
 import React from 'react';
 import BusquedaStore from './BusquedaStore.js';
 import ListaRecetas from './ListaRecetas.js';
+import ListaIngredientes from './ListaIngredientes.js';
+import ListaCategorias from './ListaCategorias.js';
 
 class ListaResultados extends React.Component {
 
@@ -35,8 +37,8 @@ class ListaResultados extends React.Component {
         const markup = 
             <div key="raiz">
                 {recetas.length > 0 && <ListaRecetas recetas={recetas} />}
-                {insumos.length > 0 && <div><h2>ingredientes</h2><ul>{insumos.map((e) => this.renderItem(e, "i"))}</ul></div>}
-                {categorias.length > 0 && <div><h2>categorias</h2><ul>{categorias.map((e) => this.renderItem(e, "c"))}</ul></div>}            
+                {insumos.length > 0 && <ListaIngredientes ingredientes={insumos} />}
+                {categorias.length > 0 && <ListaCategorias categorias={categorias}/>}            
             </div>
         return markup;
         }
