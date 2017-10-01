@@ -2,7 +2,6 @@
 .classpath
 .coveralls.yml
 .DS_Store
-.DS_Store
 .env.development.local
 .env.local
 .env.production.local
