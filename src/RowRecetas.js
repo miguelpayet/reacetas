@@ -5,7 +5,8 @@ class RowRecetas extends React.Component {
 
     constructor(props) {
         super();
-        this.state = {recetas: props.recetas.map((value) => <Receta datos={value}/>)};
+        const _recetas = props.recetas.map((value) => <Receta key={value.id} datos={value}/>);
+        this.state = {recetas: _recetas};
     }
 
     render() {

@@ -8,7 +8,7 @@ class Categoria extends React.Component {
     }
 
     render() {
-        return  <div key={"c" + this.state.id} className="col-md-3 col-sm-6">
+        return  <div className="col-md-3 col-sm-6">
                     <div className="categoria">
                         <h2>{this.state.nombre}</h2>
                     </div>

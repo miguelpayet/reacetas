@@ -36,9 +36,9 @@ class ListaResultados extends React.Component {
         const categorias = this.state.lista.filter((e) => e.tipo === 3);
         const markup = 
             <div key="raiz">
-                {recetas.length > 0 && <ListaRecetas recetas={recetas} />}
-                {insumos.length > 0 && <ListaIngredientes ingredientes={insumos} />}
-                {categorias.length > 0 && <ListaCategorias categorias={categorias}/>}            
+                <ListaRecetas recetas={recetas} />
+                <ListaIngredientes ingredientes={insumos} />
+                <ListaCategorias categorias={categorias}/>
             </div>
         return markup;
         }

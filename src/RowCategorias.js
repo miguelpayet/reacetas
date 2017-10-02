@@ -5,7 +5,8 @@ class RowCategorias extends React.Component {
     
     constructor(props) {
         super();
-        this.state = {categorias: props.categorias.map((value) => <Categoria datos={value}/>)};
+        const _categorias = props.categorias.map((value) => <Categoria key={value.id} datos={value}/>);
+        this.state = {categorias: _categorias};
     }
 
     render() {

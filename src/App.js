@@ -18,7 +18,6 @@ class App extends Component {
   }
 
   onChange(b) {
-    console.log(b);
   }
 
   render() {
@@ -38,5 +37,3 @@ class App extends Component {
 
 export default App;
 
-/*
-*/

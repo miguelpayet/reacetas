@@ -5,7 +5,8 @@ class RowIngredientes extends React.Component {
 
     constructor(props) {
         super();
-        this.state = {ingredientes: props.ingredientes.map((value) => <Ingrediente datos={value}/>)};
+        const _ingredientes = props.ingredientes.map((value) => <Ingrediente key={value.id} datos={value}/>);
+        this.state = {ingredientes: _ingredientes};
     }
 
     render() {
