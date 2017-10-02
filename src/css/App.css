@@ -47,17 +47,35 @@ margin: 0 5px 0 0;
 margin: 0 10px
 }
 
-div.receta {
-  margin: 1px;
+div.receta, div.ingrediente, div.categoria {
+  margin: 10px 0;
   border: 1px solid #ddd;
 }
 
-div.receta h1 {
-  font-size: 100%;
+div.receta h2, div.ingrediente h2, div.categoria h2 {
+  font-size: 120%;
+  font-weight: 700;
   text-align:center;
+  padding: 5px;
+}
+
+div.receta h2 {
+  height: 2.5em;
+}
+
+div.receta p {
+  height: 6em; 
+  overflow:hidden;
+  padding: 5px;
 }
 
 div.receta p {
   font-size: 80%;
   text-align:justify;
+}
+
+h1.resultado {
+  margin: 10px 0 10px 0;
+  padding: 0 0 5px 0;
+  border-bottom: 1px solid #000;
 }
