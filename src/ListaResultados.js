@@ -9,49 +9,36 @@ class ListaResultados extends React.Component {
     constructor() {
         super();
         this.state = {lista: []};
+        this.componentDidMount = this.componentDidMount.bind(this);     
         this.onChange = this.onChange.bind(this);
-    }
-
-    buscar(b) {
-        fetch(b.url())
-        .then(response => response.json())
-        .then(result => this.setLista(result))
-        .catch(e => e);
-    }
-
-    componentDidMount() {
-        BusquedaStore.addNotify(this.onChange);
+        this.obtenerLista = this.obtenerLista.bind(this);
+        this.render = this.render.bind(this);
     }
 
     onChange(b) {
-        this.buscar(b);
+        console.log(5);    
+        const r = b.getResultado();
+        console.log(r);
+        this.setState({lista: b.getResultado()});
+    }
+        
+    componentDidMount() {
+        BusquedaStore.addNotify(this.onChange);
+    }
+        
+    obtenerLista(lista) {
+        return this.state.lista.filter(e => e.tipo === lista);
     }
 
     render() {
-        if (this.state.lista.length === 0) {
-            return <div key="raiz"><p>no hay resultados</p></div>
-        } else {
-        const recetas = this.state.lista.filter((e) => e.tipo === 1);
-        const insumos = this.state.lista.filter((e) => e.tipo === 2);
-        const categorias = this.state.lista.filter((e) => e.tipo === 3);
-        const markup = 
-            <div key="raiz">
-                <ListaRecetas recetas={recetas} />
-                <ListaIngredientes ingredientes={insumos} />
-                <ListaCategorias categorias={categorias}/>
-            </div>
-        return markup;
-        }
+        console.log("01");
+        return <div key="raiz">
+                    <ListaRecetas obtenerLista={this.obtenerLista} />
+                    <ListaIngredientes obtenerLista={this.obtenerLista}  />
+                    <ListaCategorias obtenerLista={this.obtenerLista}  />
+                </div>
     }
-
-    renderItem(e, tipo) {
-        return <li key={tipo + "-" + e.id}>{e.nombre}&nbsp;({e.cantidad}&nbsp;receta{e.cantidad === 1? "" : "s"})</li>;
-    }
-
-    setLista(result) {
-        this.setState({lista: result});
-    }
-
+    
 }
 
 export default ListaResultados;

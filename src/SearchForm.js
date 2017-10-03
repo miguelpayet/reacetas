@@ -19,6 +19,7 @@ class SearchForm extends React.Component {
     }
   
     handleSubmit(event) {
+      console.log(1);
       const b = new Busqueda(this.state);
       BusquedaActions.addBusqueda(b);
       event.preventDefault();
