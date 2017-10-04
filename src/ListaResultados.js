@@ -11,14 +11,12 @@ class ListaResultados extends React.Component {
         this.state = {lista: []};
         this.componentDidMount = this.componentDidMount.bind(this);     
         this.onChange = this.onChange.bind(this);
+        this.obtenerClase = this.obtenerClase.bind(this);
         this.obtenerLista = this.obtenerLista.bind(this);
         this.render = this.render.bind(this);
     }
 
     onChange(b) {
-        console.log(5);    
-        const r = b.getResultado();
-        console.log(r);
         this.setState({lista: b.getResultado()});
     }
         
@@ -26,16 +24,25 @@ class ListaResultados extends React.Component {
         BusquedaStore.addNotify(this.onChange);
     }
         
+    obtenerClase(lista) {
+        let total = 0;
+        for(let i = 0; i < this.state.lista.length; i++) {
+            if (this.state.lista[i].tipo === lista) {
+                total++;
+            }
+        }
+        return total === 0 ? "ocultar" : "mostrar";
+    }
+
     obtenerLista(lista) {
         return this.state.lista.filter(e => e.tipo === lista);
     }
 
     render() {
-        console.log("01");
         return <div key="raiz">
-                    <ListaRecetas obtenerLista={this.obtenerLista} />
-                    <ListaIngredientes obtenerLista={this.obtenerLista}  />
-                    <ListaCategorias obtenerLista={this.obtenerLista}  />
+                    <ListaRecetas obtenerLista={this.obtenerLista} obtenerClase={this.obtenerClase} />
+                    <ListaIngredientes obtenerLista={this.obtenerLista} obtenerClase={this.obtenerClase} />
+                    <ListaCategorias obtenerLista={this.obtenerLista} obtenerClase={this.obtenerClase} />
                 </div>
     }
     

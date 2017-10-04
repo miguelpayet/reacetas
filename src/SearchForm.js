@@ -19,7 +19,6 @@ class SearchForm extends React.Component {
     }
   
     handleSubmit(event) {
-      console.log(1);
       const b = new Busqueda(this.state);
       BusquedaActions.addBusqueda(b);
       event.preventDefault();
@@ -44,7 +43,7 @@ class SearchForm extends React.Component {
                   <input type="checkbox" id="ingredientes" name="ingredientes" onChange={this.handleChange} />ingredientes
                 </label>
                 <label>
-                  <input type="checkbox" id="categorias" name="categorias" onChange={this.handleChange} />categorias
+                  <input type="checkbox" id="categorias" name="categorias" onChange={this.handleChange} />categorías
                 </label>
               </p>
             </form>

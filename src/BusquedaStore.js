@@ -9,7 +9,6 @@ class BusquedaStore {
     }
   
     static addBusqueda(busqueda) {
-      console.log(4);        
       BusquedaStore.state.busquedas.push(busqueda);
       BusquedaStore.onChange();
     }

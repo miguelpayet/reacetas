@@ -13,7 +13,6 @@ class App extends Component {
   }
 
   render() {
-    console.log("00");
     return  <div className="App container-fluid">
               <div className="SearchForm">
                 <SearchForm />

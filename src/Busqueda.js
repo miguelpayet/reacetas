@@ -17,7 +17,6 @@ class Busqueda {
     }
 
     setResultado(_resultado) {
-        console.log(_resultado);
         this.resultado = _resultado;
     } 
 

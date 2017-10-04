@@ -1,21 +1,28 @@
 import React from 'react';
 import RowCategorias from './RowCategorias.js';
+import RowLeerMas from "./RowLeerMas.js";
+import CrearId from "./funciones.js";
 
 class ListaCategorias extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.render = this.render.bind(this);
+    }
+
     render() {
-        console.log("03");
         const lista = this.props.obtenerLista(3);
         const filas = [];
         for (let i = 0; i <= lista.length; i += 4) {
-            let rowid = "cat";
-            for (let j = i; j <= i + 3 && j < lista.length; j++) {
-                rowid += "-" + lista[j].id;
-            };
+            const rowid = CrearId("c", lista, i);
             filas.push(<RowCategorias key={rowid} categorias={lista.filter((value, index) => index >= i && index < i + 4)}/>);
+            if (filas.length >= 3) {
+                filas.push(<RowLeerMas key="c" nombre="categorías"/>);
+                break;
+            }
         }
-        return  <div>
-                    {filas.length > 0 && <h1 className="resultado">categorias</h1>}
+        return  <div className={this.props.obtenerClase(3)}>
+                    {filas.length > 0 && <h1 className="resultado">categorías</h1>}
                     {filas}
                 </div>
 
