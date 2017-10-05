@@ -1,4 +1,11 @@
+*.gif
+*.jpg
 *.launch
+*.png
+*bootstrap*
+*font-awesome*
+*fontawesome-webfont*
+*FontAwesome*
 .classpath
 .coveralls.yml
 .DS_Store
@@ -7,10 +14,6 @@
 .env.production.local
 .env.test.local
 .eslintcache
-*bootstrap*
-*font-awesome*
-*fontawesome-webfont*
-*FontAwesome*
 .project
 .settings/
 /.idea
