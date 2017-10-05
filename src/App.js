@@ -17,9 +17,7 @@ class App extends Component {
               <div className="SearchForm">
                 <SearchForm />
               </div>
-              <div>
-                <ListaResultados />
-              </div>
+              <ListaResultados />
             </div>
   }
 

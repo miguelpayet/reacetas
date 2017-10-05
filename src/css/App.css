@@ -81,7 +81,7 @@ h1.resultado {
 }
 
 .ocultar {
-  visibility: hidden;
+  display: none;
 }
 
 .mostrar {

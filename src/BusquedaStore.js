@@ -3,15 +3,6 @@ class BusquedaStore {
     static addNotify(algo) {
         BusquedaStore.notify.push(algo);
     }
-    
-    static getState() {
-      return BusquedaStore.state;
-    }
-  
-    static addBusqueda(busqueda) {
-      BusquedaStore.state.busquedas.push(busqueda);
-      BusquedaStore.onChange();
-    }
 
     static getBusqueda() {
         if (BusquedaStore.state.busquedas.length > 0) {
@@ -20,12 +11,30 @@ class BusquedaStore {
             return undefined;
         }
     }
-  
-    static onChange() {
-        const b = BusquedaStore.getBusqueda();
-        BusquedaStore.notify.forEach(function(n){n.call(null, b);});
+      
+    static getState() {
+      return BusquedaStore.state;
     }
-  }
+
+    static iniciarBusqueda() {
+        BusquedaStore.onChange(1);
+    }
+
+    static onChange(evento) {
+        if (evento === 1) {
+            BusquedaStore.notify.forEach(function(n){n.call();});
+        } else if (evento === 2) {
+            const b = BusquedaStore.getBusqueda();
+            BusquedaStore.notify.forEach(function(n){n.call(null, b);});    
+        }
+    }
+  
+    static terminarBusqueda(busqueda) {
+      BusquedaStore.state.busquedas.push(busqueda);
+      BusquedaStore.onChange(2);
+    }
+
+}
 
   BusquedaStore.state = {busquedas: []};
   BusquedaStore.notify = [];
