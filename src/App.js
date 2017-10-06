@@ -2,14 +2,23 @@ import React, { Component } from 'react';
 import './css/bootstrap.min.css'; 
 import './css/font-awesome.min.css';
 import './css/App.css';
-import ListaResultados from './ListaResultados.js'
+import {history} from './util';
 import SearchForm from './SearchForm.js';
+import PaginaPrincipal from "./PaginaPrincipal.js";
 
 class App extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    this.state = {pathname: props.pathname};
+    this.componentDidMount = this.componentDidMount.bind(this);
     this.render = this.render.bind(this);
+  }
+
+  componentDidMount() {
+    history.onChange((pathname) => {
+      this.setState({pathname: pathname})
+    });
   }
 
   render() {
@@ -17,7 +26,10 @@ class App extends Component {
               <div className="SearchForm">
                 <SearchForm />
               </div>
-              <ListaResultados />
+              <div>
+                <p>[{this.state.pathname}]</p>
+              </div>
+              <PaginaPrincipal />
             </div>
   }
 
