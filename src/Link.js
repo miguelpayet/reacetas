@@ -14,7 +14,7 @@ const Link = (props) => {
         const newTab = e.metaKey || e.ctrlKey;
         if (!newTab && !props.href.startsWith('http')) {
             e.preventDefault();
-            history.push(props.href);
+            history.pushState({}, "", props.href);
         }
     };
 

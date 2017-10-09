@@ -13,12 +13,23 @@ class App extends Component {
     this.state = {pathname: props.pathname};
     this.componentDidMount = this.componentDidMount.bind(this);
     this.render = this.render.bind(this);
+    this.historyCallback = this.historyCallback.bind(this);
+  }
+
+  historyCallback(state, title, href) {
+    console.log("location: " + document.location + ", state: " + JSON.stringify(state));    
   }
 
   componentDidMount() {
-    history.onChange((pathname) => {
-      this.setState({pathname: pathname})
+    history.onChange((state, title, pathname) => {
+      console.log("history.onChange");
+      this.historyCallback(state, title, pathname);
     });
+    const esto = this;
+    window.onpopstate = function(event) {
+      console.log("window.onpopstate");
+      esto.historyCallback(event.state, "", document.location);
+    }
   }
 
   render() {

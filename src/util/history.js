@@ -1,11 +1,11 @@
 const onChangeListeners = [];
 
-function push(pathname) {
-    window.history.pushState({}, '', pathname);
-    onChangeListeners.forEach(callback => callback(pathname));
+function pushState(objeto, titulo, pathname) {
+    window.history.pushState(objeto, titulo, pathname);
+    onChangeListeners.forEach(callback => callback(objeto, titulo, pathname));
 }
 
 export default {
-    push,
+    pushState,
     onChange: cb => onChangeListeners.push(cb),
 };
