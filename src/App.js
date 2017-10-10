@@ -8,9 +8,9 @@ import PaginaPrincipal from "./PaginaPrincipal.js";
 import PaginaDetalleReceta from "./PaginaDetalleReceta.js";
 
 const routes = [
-  {path: /\/busqueda\?valor=.*/g, componente: PaginaPrincipal},
-  {path: /\/receta\?id=[0-9]*/g, componente: PaginaDetalleReceta},
-  {path: /\/$/g, componente: PaginaPrincipal}
+  {path: /\/busqueda\?valor=.*/, componente: PaginaPrincipal},
+  {path: /\/receta\?id=[0-9]*/, componente: PaginaDetalleReceta},
+  {path: /\/$/, componente: PaginaPrincipal}
 ];
 
 class App extends Component {
@@ -26,10 +26,12 @@ class App extends Component {
 
   componentDidMount() {
     history.onChange((state, title, pathname) => {
+        console.log("onchange " + pathname);
         this.historyCallback(state, title, pathname);
     });
     const esto = this;
     window.onpopstate = function(event) {
+      console.log("onpopstate " + document.location);
       esto.historyCallback(event.state, "", document.location);
     };
   }
@@ -40,12 +42,9 @@ class App extends Component {
 
   historyCallback(state, title, href) {
     for (let i = 0; i < routes.length; i++) {
-      if (routes[i].path.test(document.URL)) {
-        console.log("test");
-        console.log(document.location);
-        console.log(document.URL);
-        console.log(routes[i].path);
-        console.log(routes[i].componente);
+      console.log(routes[i].path, document.location.href, document.location.href.length);
+      if (routes[i].path.test(document.location.href)) {
+        console.log("test " + routes[i].path);
         this.setState(Object.assign({componente: routes[i].componente}, state));
         break;
       }
