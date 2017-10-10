@@ -4,7 +4,7 @@ import ListaResultados from './ListaResultados.js'
 class PaginaPrincipal extends React.Component {
 
     render() {
-        return <ListaResultados />
+        return <ListaResultados estado={this.props.estado} />
     }
 }
 

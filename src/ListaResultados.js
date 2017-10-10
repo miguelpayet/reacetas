@@ -1,5 +1,4 @@
 import React from 'react';
-import BusquedaStore from './BusquedaStore.js';
 import ListaRecetas from './ListaRecetas.js';
 import ListaIngredientes from './ListaIngredientes.js';
 import ListaCategorias from './ListaCategorias.js';
@@ -7,37 +6,23 @@ import LoadingIndicator from './LoadingIndicator.js';
 
 class ListaResultados extends React.Component {
 
-    constructor() {
-        super();
-        this.state = {lista: [], loading: false};
-        this.componentDidMount = this.componentDidMount.bind(this);     
+    constructor(props) {
+        super(props);
+        this.state = {loading: false};
         this.estadoIndicador = this.estadoIndicador.bind(this);
-        this.onChange = this.onChange.bind(this);
         this.obtenerClase = this.obtenerClase.bind(this);
         this.obtenerLista = this.obtenerLista.bind(this);
         this.render = this.render.bind(this);
     }
 
-    onChange(b) {
-        if (b === undefined) {
-            this.setState({lista: [], loading: true});
-        } else {
-            this.setState({lista: b.getResultado(), loading: false});
-        }
-    }
-        
-    componentDidMount() {
-        BusquedaStore.addNotify(this.onChange);
-    }
-        
     estadoIndicador() {
         return this.state.loading;
     }
 
     obtenerClase(lista) {
         let total = 0;
-        for(let i = 0; i < this.state.lista.length; i++) {
-            if (this.state.lista[i].tipo === lista) {
+        for(let i = 0; i < this.props.estado().resultados.length; i++) {
+            if (this.props.estado().resultados[i].tipo === lista) {
                 total++;
             }
         }
@@ -45,7 +30,7 @@ class ListaResultados extends React.Component {
     }
 
     obtenerLista(lista) {
-        return this.state.lista.filter(e => e.tipo === lista);
+        return this.props.estado().resultados.filter(e => e.tipo === lista);
     }
 
     render() {

@@ -24,12 +24,10 @@ class BusquedaStore {
 
     static onChange(evento) {
         if (evento === 1) {
-            //BusquedaStore.notify.forEach(function(n){n.call();});
-            history.pushState({}, "", "/");
+            //history.pushState({buscando: true}, "", "/");
         } else if (evento === 2) {
-            //BusquedaStore.notify.forEach(function(n){n.call(null, b);});  
             const b = BusquedaStore.getBusqueda();
-            history.pushState({resultado: b.getResultado()}, "", "/busqueda?valor=" + b.texto);
+            history.pushState({buscando: false, resultados: b.getResultado()}, "", "/busqueda?valor=" + b.texto);
         }
     }
   
@@ -40,7 +38,7 @@ class BusquedaStore {
 
 }
 
-  BusquedaStore.state = {busquedas: []};
-  BusquedaStore.notify = [];
+BusquedaStore.state = {busquedas: []};
+BusquedaStore.notify = [];
 
-  export default BusquedaStore; 
+export default BusquedaStore; 
