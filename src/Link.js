@@ -34,7 +34,7 @@ Link.propTypes = {
     ]),
     children: PropTypes.oneOfType([
         PropTypes.string,
-        PropTypes.element,
+        PropTypes.node,
     ]).isRequired,
     className: PropTypes.string,
 };

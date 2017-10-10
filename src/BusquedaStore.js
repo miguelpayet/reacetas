@@ -1,3 +1,5 @@
+import {history} from './util';
+
 class BusquedaStore {
 
     static addNotify(algo) {
@@ -22,10 +24,12 @@ class BusquedaStore {
 
     static onChange(evento) {
         if (evento === 1) {
-            BusquedaStore.notify.forEach(function(n){n.call();});
+            //BusquedaStore.notify.forEach(function(n){n.call();});
+            history.pushState({}, "", "/");
         } else if (evento === 2) {
+            //BusquedaStore.notify.forEach(function(n){n.call(null, b);});  
             const b = BusquedaStore.getBusqueda();
-            BusquedaStore.notify.forEach(function(n){n.call(null, b);});    
+            history.pushState({resultado: b.getResultado()}, "", "/busqueda?valor=" + b.texto);
         }
     }
   

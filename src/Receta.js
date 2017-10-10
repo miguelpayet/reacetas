@@ -23,7 +23,7 @@ class Receta extends React.Component {
     }
 
     getUrl() {
-        return "/#/receta/" + this.getId();
+        return "/#/receta/?id=" + this.getId();
     }
 
     render() {
