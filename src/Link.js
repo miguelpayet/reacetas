@@ -1,28 +1,26 @@
 import React from 'react';
 import classnames from '../node_modules/classnames/';
-import {history} from './util';
 import PropTypes from 'prop-types';
 
-const Link = (props) => {
+class Link extends React.Component {
 
-    const className = classnames(
-        props.className,
-        {link: props.theme !== 'no'},
-    );
+    className() {
+        classnames(this.props.className, {link: this.props.theme !== 'no'});
+    }
 
-    const onClick = (e) => {
+    onClick(e) {
         const newTab = e.metaKey || e.ctrlKey;
-        if (!newTab && !props.href.startsWith('http')) {
+        if (!newTab && !this.props.href.startsWith('http')) {
             e.preventDefault();
-            history.pushState({}, "", props.href);
+            this.props.ejecutar();
         }
-    };
+    }
 
-    return (
-        <a className={className} href={props.href} onClick={onClick}>
-            {props.children}
+    render() {
+        return <a className={this.className()} href={this.props.href} onClick={this.onClick}>
+            {this.props.children}
         </a>
-    );
+    }
 
 };
 

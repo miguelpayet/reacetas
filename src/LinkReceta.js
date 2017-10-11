@@ -1,16 +1,25 @@
 import React from 'react';
 import Link from "./Link.js";
+import Receta from "./Receta.js";
 import {history} from "./util";
 
 class LinkReceta extends React.Component {
 
     constructor(props) {
-        super();
-        this.state = {nombre: props.datos.nombre, id: props.datos.id, descripcion: props.datos.descripcion};
+        super(props);
         this.render = this.render.bind(this);
         this.getId = this.getId.bind(this);
         this.getUrl = this.getUrl.bind(this);
+        this.ejecutar = this.ejecutar.bind(this);
         this.handleClick = this.handleClick.bind(this);
+    }
+
+    ejecutar() {
+        const r = new Receta(this.props);
+        fetch(r.url())
+            .then(response => response.json())
+            .then(result => history.pushState({result}, "", this.href))
+            .catch(e => console.log(e));
     }
 
     handleClick() {
@@ -19,7 +28,7 @@ class LinkReceta extends React.Component {
     }
 
     getId() {
-        return this.state.id;
+        return this.props.id;
     }
 
     getUrl() {
@@ -27,11 +36,11 @@ class LinkReceta extends React.Component {
     }
 
     render() {
-        return  <div key={"r1" + this.state.id} className="col-md-3 col-sm-6">
-                    <div key={"r1" + this.state.id} className="receta">
-                        <Link href={this.getUrl()}>
-                            <h2 key={"t" + this.state.id}>{this.state.nombre}</h2>
-                            <p key={"p" + this.state.id}>{this.state.descripcion}</p>
+        return  <div key={"r1" + this.props.id} className="col-md-3 col-sm-6">
+                    <div key={"r1" + this.props.id} className="receta">
+                        <Link ejecutar={this.ejecutar}>
+                            <h2 key={"t" + this.props.id}>{this.props.nombre}</h2>
+                            <p key={"p" + this.props.id}>{this.props.descripcion}</p>
                         </Link>
                     </div>
                 </div>

@@ -27,7 +27,7 @@ class BusquedaStore {
             //history.pushState({buscando: true}, "", "/");
         } else if (evento === 2) {
             const b = BusquedaStore.getBusqueda();
-            history.pushState({buscando: false, resultados: b.getResultado()}, "", "/busqueda?valor=" + b.texto);
+            history.pushState({buscando: false, resultados: b.getResultado()}, "", "/busqueda?valor=" + b.nombre);
         }
     }
   

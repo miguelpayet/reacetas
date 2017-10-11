@@ -1,17 +1,17 @@
 import React from 'react';
-import Receta from './Receta.js';
+import LinkReceta from './LinkReceta.js';
 
 class RowRecetas extends React.Component {
 
     constructor(props) {
-        super();
-        const _recetas = props.recetas.map((value) => <Receta key={value.id} datos={value}/>);
-        this.state = {recetas: _recetas};
+        super(props);
+        const r = props.recetas.map((value) => <LinkReceta key={value.id} datos={value}/>);
+        this.state = {recetas: r};
     }
 
     render() {
         return  <div className="row">
-                    {this.state.recetas}
+                    {this.state.instrucciones}
                 </div>
     }
 }

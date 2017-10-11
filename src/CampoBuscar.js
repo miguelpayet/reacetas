@@ -7,12 +7,16 @@ class CampoBuscar extends MiComponente {
         super();
         this.state = {texto: ""};
         this.handleChange = this.handleChange.bind(this);
+        this.render = this.render.bind(this);
     }
 
-    handleSubmit(event) {
-        console.log("buscar");
+    handleChange(event) {
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+        this.setState({[name]: value});
     }
-    
+
     render() {
         return (
             <p className="buscar">
