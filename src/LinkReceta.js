@@ -2,7 +2,7 @@ import React from 'react';
 import Link from "./Link.js";
 import {history} from "./util";
 
-class Receta extends React.Component {
+class LinkReceta extends React.Component {
 
     constructor(props) {
         super();
@@ -39,4 +39,4 @@ class Receta extends React.Component {
     
 }
 
-export default Receta;
+export default LinkReceta;
