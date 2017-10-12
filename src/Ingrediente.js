@@ -1,20 +1,23 @@
-import React from 'react';
-
-class Ingrediente extends React.Component {
+class Ingrediente {
 
     constructor(props) {
-        super();
-        this.state = {nombre: props.datos.nombre, id: props.datos.id};
+        this.id = props.id;
+        this.hred = this.href.bind(this);
+        this.url = this.url.bind(this);
     }
 
-    render() {
-        return  <div key={"i" + this.state.id} className="col-md-3 col-sm-6">
-                    <div className="ingrediente">
-                        <h2>{this.state.nombre}</h2>
-                    </div>
-                </div>
+    href() {
+        return `${Ingrediente.PATH_HREF}${this.id}`;
+    }
+
+    url() {
+        return `${Ingrediente.PATH_BASE}${Ingrediente.PATH_SEARCH}${this.id}`;
     }
 
 }
+
+Ingrediente.PATH_BASE = 'http://recetadebrownes.xyz';
+Ingrediente.PATH_SEARCH = '/ingrediente/recetas?id=';
+Ingrediente.PATH_HREF = '/ingrediente/?id=';
 
 export default Ingrediente;

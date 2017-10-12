@@ -1,4 +1,4 @@
-class Busqueda {
+class Receta {
 
     constructor(props) {
         this.id = props.datos.id;
@@ -6,12 +6,12 @@ class Busqueda {
     }
 
     url() {
-        return `${Busqueda.PATH_BASE}${Busqueda.PATH_SEARCH}${this.id}`;
+        return `${Receta.PATH_BASE}${Receta.PATH_SEARCH}${this.id}`;
     }
 
 }
 
-Busqueda.PATH_BASE = 'http://recetadebrownes.xyz';
-Busqueda.PATH_SEARCH = '/receta?id=';
+Receta.PATH_BASE = 'http://recetadebrownes.xyz';
+Receta.PATH_SEARCH = '/receta?id=';
 
-export default Busqueda
+export default Receta

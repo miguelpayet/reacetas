@@ -17,7 +17,7 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {componente: PaginaPrincipal, resultados: []};
+    this.state = {componente: PaginaPrincipal, resultados: [], receta: {}};
     this.componentDidMount = this.componentDidMount.bind(this);
     this.render = this.render.bind(this);
     this.historyCallback = this.historyCallback.bind(this);

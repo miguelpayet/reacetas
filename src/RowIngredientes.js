@@ -1,12 +1,13 @@
 import React from 'react';
-import Ingrediente from './Ingrediente.js';
+import LinkIngrediente from './LinkIngrediente.js';
 
 class RowIngredientes extends React.Component {
 
     constructor(props) {
         super();
-        const _ingredientes = props.ingredientes.map((value) => <Ingrediente key={value.id} datos={value}/>);
-        this.state = {ingredientes: _ingredientes};
+        this.state = {ingredientes: props.ingredientes.map(
+            (value) => <LinkIngrediente key={value.id} id={value.id} nombre={value.nombre}/>
+        )};
     }
 
     render() {
