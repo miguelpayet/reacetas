@@ -8,7 +8,17 @@ class PaginaDetalleReceta extends React.Component {
     }
 
     render() {
-        return <div><p>hola</p></div>
+        const r = this.props.estado().receta;
+        return  <div>
+                    <h1>{r.nombre}</h1>
+                    <div><p>{r.descripcion}</p></div>
+                    <div>
+                        <ul>
+                            {r.ingredientes.map(i => <li>{i}</li>)}
+                        </ul>
+                    </div>
+                    <div dangerouslySetInnerHTML={{__html: r.instrucciones}}></div>
+                </div>
     }
 
 }

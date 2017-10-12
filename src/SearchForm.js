@@ -38,7 +38,7 @@ class SearchForm extends React.Component {
               </p>
               <p className="buscar">
                 <label>
-                  <input type="checkbox" id="recetas" name="recetas" defaultChecked={this.state.instrucciones} onChange={this.handleChange} />recetas
+                  <input type="checkbox" id="recetas" name="recetas" defaultChecked={this.state.recetas} onChange={this.handleChange} />recetas
                 </label>
                 <label>
                   <input type="checkbox" id="ingredientes" name="ingredientes" onChange={this.handleChange} />ingredientes

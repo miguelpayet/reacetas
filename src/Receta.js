@@ -1,7 +1,7 @@
 class Busqueda {
 
     constructor(props) {
-        this.id = props.id;
+        this.id = props.datos.id;
         this.url = this.url.bind(this);
     }
 

@@ -18,7 +18,7 @@ class LinkReceta extends React.Component {
         const r = new Receta(this.props);
         fetch(r.url())
             .then(response => response.json())
-            .then(result => history.pushState({result}, "", this.href))
+            .then(result => history.pushState({receta: result}, "", this.getUrl()))
             .catch(e => console.log(e));
     }
 
@@ -28,7 +28,7 @@ class LinkReceta extends React.Component {
     }
 
     getId() {
-        return this.props.id;
+        return this.props.datos.id;
     }
 
     getUrl() {
@@ -36,11 +36,11 @@ class LinkReceta extends React.Component {
     }
 
     render() {
-        return  <div key={"r1" + this.props.id} className="col-md-3 col-sm-6">
-                    <div key={"r1" + this.props.id} className="receta">
-                        <Link ejecutar={this.ejecutar}>
-                            <h2 key={"t" + this.props.id}>{this.props.nombre}</h2>
-                            <p key={"p" + this.props.id}>{this.props.descripcion}</p>
+        return  <div key={"r1" + this.props.datos.id} className="col-md-3 col-sm-6">
+                    <div key={"r1" + this.props.datos.id} className="receta">
+                        <Link ejecutar={this.ejecutar} href={this.getUrl()}>
+                            <h2 key={"t" + this.props.datos.id}>{this.props.datos.nombre}</h2>
+                            <p key={"p" + this.props.datos.id}>{this.props.datos.descripcion}</p>
                         </Link>
                     </div>
                 </div>

@@ -26,12 +26,10 @@ class App extends Component {
 
   componentDidMount() {
     history.onChange((state, title, pathname) => {
-        console.log("onchange " + pathname);
         this.historyCallback(state, title, pathname);
     });
     const esto = this;
     window.onpopstate = function(event) {
-      console.log("onpopstate " + document.location);
       esto.historyCallback(event.state, "", document.location);
     };
   }
@@ -42,9 +40,7 @@ class App extends Component {
 
   historyCallback(state, title, href) {
     for (let i = 0; i < routes.length; i++) {
-      console.log(routes[i].path, document.location.href, document.location.href.length);
       if (routes[i].path.test(document.location.href)) {
-        console.log("test " + routes[i].path);
         this.setState(Object.assign({componente: routes[i].componente}, state));
         break;
       }

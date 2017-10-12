@@ -11,7 +11,7 @@ class RowRecetas extends React.Component {
 
     render() {
         return  <div className="row">
-                    {this.state.instrucciones}
+                    {this.state.recetas}
                 </div>
     }
 }

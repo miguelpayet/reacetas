@@ -4,6 +4,13 @@ import PropTypes from 'prop-types';
 
 class Link extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.className = this.className.bind(this);
+        this.onClick = this.onClick.bind(this);
+        this.render = this.render.bind(this);
+    }
+    
     className() {
         classnames(this.props.className, {link: this.props.theme !== 'no'});
     }
@@ -17,9 +24,9 @@ class Link extends React.Component {
     }
 
     render() {
-        return <a className={this.className()} href={this.props.href} onClick={this.onClick}>
-            {this.props.children}
-        </a>
+        return <a href={this.props.href} onClick={this.onClick}>
+                    {this.props.children}
+                </a>
     }
 
 };
