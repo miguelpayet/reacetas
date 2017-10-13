@@ -7,11 +7,13 @@ import SearchForm from './SearchForm.js';
 import PaginaPrincipal from "./PaginaPrincipal.js";
 import PaginaDetalleReceta from "./PaginaDetalleReceta.js";
 import PaginaDetalleIngrediente from "./PaginaDetalleIngrediente.js";
+import PaginaDetalleCategoria from "./PaginaDetalleCategoria.js";
 
 const routes = [
   {path: /\/busqueda\?valor=.*/, componente: PaginaPrincipal},
   {path: /\/receta\?id=[0-9]*/, componente: PaginaDetalleReceta},
   {path: /\/insumo\?id=[0-9]*/, componente: PaginaDetalleIngrediente},
+  {path: /\/categoria\?id=[0-9]*/, componente: PaginaDetalleCategoria},
   {path: /\/$/, componente: PaginaPrincipal}
 ];
 

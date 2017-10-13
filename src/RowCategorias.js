@@ -1,11 +1,13 @@
 import React from 'react';
-import Categoria from './Categoria.js';
+import LinkCategoria from './LinkCategoria.js';
 
 class RowCategorias extends React.Component {
     
     constructor(props) {
         super();
-        const _categorias = props.categorias.map((value) => <Categoria key={value.id} datos={value}/>);
+        const _categorias = props.categorias.map(
+            (value) => <LinkCategoria key={value.id} id={value.id} nombre={value.nombre}/>
+        );
         this.state = {categorias: _categorias};
     }
 
