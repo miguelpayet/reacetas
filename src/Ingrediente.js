@@ -17,7 +17,7 @@ class Ingrediente {
 }
 
 Ingrediente.PATH_BASE = 'http://recetadebrownes.xyz';
-Ingrediente.PATH_SEARCH = '/ingrediente/recetas?id=';
-Ingrediente.PATH_HREF = '/ingrediente/?id=';
+Ingrediente.PATH_SEARCH = '/insumo/recetas?id=';
+Ingrediente.PATH_HREF = '/insumo?id=';
 
 export default Ingrediente;

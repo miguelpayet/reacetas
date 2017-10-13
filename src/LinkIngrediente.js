@@ -15,12 +15,14 @@ class LinkIngrediente extends React.Component {
     }
 
     ejecutar() {
-        const url = this.state.ingrediente.url();
-        console.log(url);
-        fetch(url)
+        fetch(this.state.ingrediente.url())
             .then(response => response.json())
-            .then(result => history.pushState({ receta: result }, "", url))
-            .catch(e => console.log(e));
+            .then(result => {
+                history.pushState({ recetas: result }, "", this.state.ingrediente.href())
+            })
+            .catch(e => {
+                console.log(e)
+            });
     }
 
     handleClick() {

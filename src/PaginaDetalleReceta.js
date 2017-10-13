@@ -14,7 +14,7 @@ class PaginaDetalleReceta extends React.Component {
                     <div><p>{r.descripcion}</p></div>
                     <div>
                         <ul>
-                            {r.ingredientes.map(i => <li>{i}</li>)}
+                            {r.ingredientes.map(i => <li id={i}>{i}</li>)}
                         </ul>
                     </div>
                     <div dangerouslySetInnerHTML={{__html: r.instrucciones}}></div>

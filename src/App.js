@@ -6,10 +6,12 @@ import {history} from './util';
 import SearchForm from './SearchForm.js';
 import PaginaPrincipal from "./PaginaPrincipal.js";
 import PaginaDetalleReceta from "./PaginaDetalleReceta.js";
+import PaginaDetalleIngrediente from "./PaginaDetalleIngrediente.js";
 
 const routes = [
   {path: /\/busqueda\?valor=.*/, componente: PaginaPrincipal},
   {path: /\/receta\?id=[0-9]*/, componente: PaginaDetalleReceta},
+  {path: /\/insumo\?id=[0-9]*/, componente: PaginaDetalleIngrediente},
   {path: /\/$/, componente: PaginaPrincipal}
 ];
 
