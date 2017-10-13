@@ -2,7 +2,8 @@ class Ingrediente {
 
     constructor(props) {
         this.id = props.id;
-        this.hred = this.href.bind(this);
+        this.nombre = props.nombre;
+        this.href = this.href.bind(this);
         this.url = this.url.bind(this);
     }
 

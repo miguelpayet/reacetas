@@ -22,7 +22,7 @@ class ListaRecetas extends React.Component {
             }
         }
         return  <div className={this.props.obtenerClase(1)}>
-                    <h1 className="resultado">recetas</h1>
+                    {this.props.titulo && <h1 className="resultado">recetas</h1>}
                     {filas}
                 </div>
     }

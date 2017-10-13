@@ -36,7 +36,7 @@ class ListaResultados extends React.Component {
     render() {
         return <div key="raiz" className="resultados">
                     <LoadingIndicator estado={this.estadoIndicador} />
-                    <ListaRecetas obtenerLista={this.obtenerLista} obtenerClase={this.obtenerClase} />
+                    <ListaRecetas obtenerLista={this.obtenerLista} obtenerClase={this.obtenerClase} titulo={true}/>
                     <ListaIngredientes obtenerLista={this.obtenerLista} obtenerClase={this.obtenerClase} />
                     <ListaCategorias obtenerLista={this.obtenerLista} obtenerClase={this.obtenerClase} />
                 </div>

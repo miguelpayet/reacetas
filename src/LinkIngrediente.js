@@ -11,23 +11,20 @@ class LinkIngrediente extends React.Component {
         this.render = this.render.bind(this);
         this.getId = this.getId.bind(this);
         this.ejecutar = this.ejecutar.bind(this);
-        this.handleClick = this.handleClick.bind(this);
     }
 
     ejecutar() {
         fetch(this.state.ingrediente.url())
             .then(response => response.json())
-            .then(result => {
-                history.pushState({ recetas: result }, "", this.state.ingrediente.href())
-            })
+            .then(result => 
+                {
+                    const state = { recetas: result, ingrediente: this.state.ingrediente.nombre };
+                    history.pushState(state, "", this.state.ingrediente.href());
+                }
+            )
             .catch(e => {
                 console.log(e)
             });
-    }
-
-    handleClick() {
-        history.push(this.getUrl());
-        return false;
     }
 
     getId() {
