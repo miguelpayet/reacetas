@@ -1,5 +1,5 @@
-import React from 'react';
-import LinkIngrediente from './LinkIngrediente.js';
+import React from "react";
+import LinkIngrediente from "./LinkIngrediente.js";
 
 class RowIngredientes extends React.Component {
 

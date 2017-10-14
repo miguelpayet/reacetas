@@ -1,5 +1,5 @@
-import React from 'react';
-import LinkCategoria from './LinkCategoria.js';
+import React from "react";
+import LinkCategoria from "./LinkCategoria.js";
 
 class RowCategorias extends React.Component {
     

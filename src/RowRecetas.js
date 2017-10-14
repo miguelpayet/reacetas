@@ -1,5 +1,5 @@
-import React from 'react';
-import LinkReceta from './LinkReceta.js';
+import React from "react";
+import LinkReceta from "./LinkReceta.js";
 
 class RowRecetas extends React.Component {
 
@@ -14,6 +14,7 @@ class RowRecetas extends React.Component {
                     {this.state.recetas}
                 </div>
     }
+
 }
 
 export default RowRecetas;
