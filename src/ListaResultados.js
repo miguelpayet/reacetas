@@ -1,47 +1,53 @@
 import React from 'react';
-import ListaRecetas from './ListaRecetas.js';
-import ListaIngredientes from './ListaIngredientes.js';
+
 import ListaCategorias from './ListaCategorias.js';
-import LoadingIndicator from './LoadingIndicator.js';
+import ListaIngredientes from './ListaIngredientes.js';
+import ListaRecetas from './ListaRecetas.js';
 
 class ListaResultados extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {loading: false};
-        this.estadoIndicador = this.estadoIndicador.bind(this);
-        this.obtenerClase = this.obtenerClase.bind(this);
-        this.obtenerLista = this.obtenerLista.bind(this);
+        this.getBusqueda = this.getBusqueda.bind(this);
+        this.getClase = this.getClase.bind(this);
+        this.getLista = this.getLista.bind(this);
+        this.getResultados = this.getResultados.bind(this);
         this.render = this.render.bind(this);
     }
 
-    estadoIndicador() {
-        return this.state.loading;
+    getBusqueda() {
+        return this.props.estado().busqueda;
     }
 
-    obtenerClase(lista) {
+    getClase(lista) {
         let total = 0;
-        for(let i = 0; i < this.props.estado().resultados.length; i++) {
-            if (this.props.estado().resultados[i].tipo === lista) {
+        const resultados = this.getResultados();
+        for (let i = 0; i < resultados.length; i++) {
+            if (resultados[i].tipo === lista) {
                 total++;
             }
         }
         return total === 0 ? "ocultar" : "mostrar";
     }
 
-    obtenerLista(lista) {
-        return this.props.estado().resultados.filter(e => e.tipo === lista);
+    getLista(lista) {
+        const resultados = this.getResultados();
+        return resultados.filter(e => e.tipo === lista);
+    }
+
+    getResultados() {
+        const state = this.props.estado();
+        return state.busqueda.resultados;
     }
 
     render() {
         return <div key="raiz" className="resultados">
-                    <LoadingIndicator estado={this.estadoIndicador} />
-                    <ListaRecetas obtenerLista={this.obtenerLista} obtenerClase={this.obtenerClase} titulo={true}/>
-                    <ListaIngredientes obtenerLista={this.obtenerLista} obtenerClase={this.obtenerClase} />
-                    <ListaCategorias obtenerLista={this.obtenerLista} obtenerClase={this.obtenerClase} />
-                </div>
+            <ListaRecetas busqueda={this.getBusqueda} lista={this.getLista} clase={this.getClase} titulo={true} />
+            <ListaIngredientes busqueda={this.getBusqueda} lista={this.getLista} clase={this.getClase} />
+            <ListaCategorias busqueda={this.getBusqueda} lista={this.getLista} clase={this.getClase} />
+        </div>
     }
-    
+
 }
 
 export default ListaResultados;

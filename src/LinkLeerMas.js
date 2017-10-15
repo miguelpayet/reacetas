@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "./LinkLeerMas.js";
+import Link from "./Link.js";
 
 class LinkLeerMas extends React.Component {
 
@@ -11,6 +11,7 @@ class LinkLeerMas extends React.Component {
 
     ejecutar() {
         console.log("hola");
+        console.log(this.props.busqueda());
     }
 
     render() {

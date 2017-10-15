@@ -1,7 +1,8 @@
 import React from 'react';
+
+import CrearId from "./funciones.js";
 import RowIngredientes from './RowIngredientes.js';
 import RowLeerMas from "./RowLeerMas.js";
-import CrearId from "./funciones.js";
 
 class ListaIngredientes extends React.Component {
 
@@ -11,23 +12,23 @@ class ListaIngredientes extends React.Component {
     }
 
     render() {
-        const lista = this.props.obtenerLista(2);
+        const lista = this.props.lista(2);
         const filas = [];
         for (let i = 0; i <= lista.length; i += 4) {
             const rowid = CrearId("i", lista, i);
-            filas.push(<RowIngredientes key={rowid} ingredientes={lista.filter((value, index) => index >= i && index < i + 4)}/>);
+            filas.push(<RowIngredientes key={rowid} ingredientes={lista.filter((value, index) => index >= i && index < i + 4)} />);
             if (filas.length >= 3) {
-                filas.push(<RowLeerMas key="i" nombre="ingredientes"/>);
+                filas.push(<RowLeerMas key="i" nombre="ingredientes" />);
                 break;
             }
         }
-        return  <div className={this.props.obtenerClase(2)}>
-                    {filas.length > 0 && <h1 className="resultado">ingredientes</h1>}
-                    {filas}
-                </div>
+        return <div className={this.props.clase(2)}>
+            {filas.length > 0 && <h1 className="resultado">ingredientes</h1>}
+            {filas}
+        </div>
 
     }
-    
+
 }
 
 export default ListaIngredientes;

@@ -11,20 +11,20 @@ class ListaRecetas extends React.Component {
     }
 
     render() {
-        const lista = this.props.obtenerLista(1);        
+        const lista = this.props.lista(1);
         const filas = [];
         for (let i = 0; i <= lista.length; i += 4) {
             const rowid = CrearId("r", lista, i);
-            filas.push(<RowRecetas key={rowid} recetas={lista.filter((value, index) => index >= i && index < i + 4)}/>);
+            filas.push(<RowRecetas key={rowid} recetas={lista.filter((value, index) => index >= i && index < i + 4)} />);
             if (filas.length >= 3) {
-                filas.push(<RowLeerMas key="r" nombre="recetas"/>);
+                filas.push(<RowLeerMas busqueda={this.props.busqueda} key="r" nombre="recetas" />);
                 break;
             }
         }
-        return  <div className={this.props.obtenerClase(1)}>
-                    {this.props.titulo && <h1 className="resultado">recetas</h1>}
-                    {filas}
-                </div>
+        return <div className={this.props.clase(1)}>
+            {this.props.titulo && <h1 className="resultado">recetas</h1>}
+            {filas}
+        </div>
     }
 
 }

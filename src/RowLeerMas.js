@@ -10,9 +10,8 @@ class RowLeerMas extends React.Component {
 
     render() {
         return <div className="col-md-12 col-sm-12">
-            <LinkLeerMas nombre={this.props.nombre} />
+            <LinkLeerMas nombre={this.props.nombre} busqueda={this.props.busqueda} />
         </div>
-
     }
 
 }

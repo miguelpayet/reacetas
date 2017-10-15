@@ -11,7 +11,7 @@ class ListaCategorias extends React.Component {
     }
 
     render() {
-        const lista = this.props.obtenerLista(3);
+        const lista = this.props.lista(3);
         const filas = [];
         for (let i = 0; i <= lista.length; i += 4) {
             const rowid = CrearId("c", lista, i);
@@ -21,7 +21,7 @@ class ListaCategorias extends React.Component {
                 break;
             }
         }
-        return  <div className={this.props.obtenerClase(3)}>
+        return  <div className={this.props.clase(3)}>
                     {filas.length > 0 && <h1 className="resultado">categorías</h1>}
                     {filas}
                 </div>

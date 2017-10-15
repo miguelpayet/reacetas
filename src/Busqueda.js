@@ -1,28 +1,13 @@
 class Busqueda {
 
     constructor(props) {
-        this.texto = props.texto;
-        this.recetas = props.recetas;
-        this.ingredientes = props.ingredientes;
         this.categorias = props.categorias;
+        this.ingredientes = props.ingredientes;
+        this.recetas = props.recetas;
         this.resultados = [];
+        this.texto = props.texto;
         this.flags = (this.recetas ? "1" : "0") + (this.ingredientes ? "1" : "0") + (this.categorias ? "1" : "0");
-        this.url = this.url.bind(this);
-        this.getResultado = this.getResultado.bind(this);
-        this.setResultado = this.setResultado.bind(this);
-    }
-  
-    getResultado() {
-        return this.resultado;
-    }
-
-    setResultado(_resultado) {
-        this.resultado = _resultado;
-    } 
-
-    url() {
-        const url = `${Busqueda.PATH_BASE}${Busqueda.PATH_SEARCH}${this.texto}${Busqueda.PARAM_FLAGS}${this.flags}`;
-        return url;
+        this.url = `${Busqueda.PATH_BASE}${Busqueda.PATH_SEARCH}${this.texto}${Busqueda.PARAM_FLAGS}${this.flags}`; 
     }
 
 }
