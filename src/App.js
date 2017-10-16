@@ -1,21 +1,24 @@
-import React, { Component } from 'react';
-
 import './css/App.css';
 import './css/bootstrap.min.css';
 import './css/font-awesome.min.css';
-import { history } from './util';
-import ListaResultados from "./ListaResultados.js";
+
+import React, { Component } from 'react';
+
 import PaginaDetalleCategoria from "./PaginaDetalleCategoria.js";
 import PaginaDetalleIngrediente from "./PaginaDetalleIngrediente.js";
 import PaginaDetalleReceta from "./PaginaDetalleReceta.js";
 import PaginaPrincipal from "./PaginaPrincipal.js";
+import PaginaRecetas from "./PaginaRecetas.js";
+import PaginaResultados from "./PaginaResultados.js";
 import SearchForm from './SearchForm.js';
+import { history } from './util';
 
 const routes = [
-  { path: /\/busqueda\?valor=.*/, componente: ListaResultados },
+  { path: /\/busqueda\?valor=.*/, componente: PaginaResultados },
   { path: /\/categoria\?id=[0-9]*/, componente: PaginaDetalleCategoria },
   { path: /\/insumo\?id=[0-9]*/, componente: PaginaDetalleIngrediente },
   { path: /\/receta\?id=[0-9]*/, componente: PaginaDetalleReceta },
+  { path: /\/recetas\?valor=.*/, componente: PaginaRecetas },
   { path: /\/$/, componente: PaginaPrincipal }
 ];
 

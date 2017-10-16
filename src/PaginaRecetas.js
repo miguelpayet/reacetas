@@ -1,13 +1,10 @@
+import ListaRecetas from "./ListaRecetas.js";
 import React from 'react';
 
-import ListaCategorias from './ListaCategorias.js';
-import ListaIngredientes from './ListaIngredientes.js';
-import ListaRecetas from './ListaRecetas.js';
-
-class ListaResultados extends React.Component {
+class PaginaRecetas extends React.Component {
 
     constructor(props) {
-        super(props);
+        super(props)
         this.getBusqueda = this.getBusqueda.bind(this);
         this.getClase = this.getClase.bind(this);
         this.getLista = this.getLista.bind(this);
@@ -41,13 +38,9 @@ class ListaResultados extends React.Component {
     }
 
     render() {
-        return <div key="raiz" className="resultados">
-            <ListaRecetas busqueda={this.getBusqueda} lista={this.getLista} clase={this.getClase} titulo={true} />
-            <ListaIngredientes busqueda={this.getBusqueda} lista={this.getLista} clase={this.getClase} />
-            <ListaCategorias busqueda={this.getBusqueda} lista={this.getLista} clase={this.getClase} />
-        </div>
+        return <ListaRecetas busqueda={this.getBusqueda} lista={this.getLista} clase={this.getClase} titulo={true} verMas={false}/>
     }
-
+    
 }
 
-export default ListaResultados;
+export default PaginaRecetas;
