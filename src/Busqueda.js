@@ -1,3 +1,5 @@
+import { config } from './util';
+
 class Busqueda {
 
     constructor(props) {
@@ -7,12 +9,11 @@ class Busqueda {
         this.resultados = [];
         this.texto = props.texto;
         this.flags = (this.recetas ? "1" : "0") + (this.ingredientes ? "1" : "0") + (this.categorias ? "1" : "0");
-        this.url = `${Busqueda.PATH_BASE}${Busqueda.PATH_SEARCH}${this.texto}${Busqueda.PARAM_FLAGS}${this.flags}`; 
+        this.url = `${config.PATH_BASE}${Busqueda.PATH_SEARCH}${this.texto}${Busqueda.PARAM_FLAGS}${this.flags}`; 
     }
 
 }
 
-Busqueda.PATH_BASE = 'http://recetadebrownes.xyz';
 Busqueda.PATH_SEARCH = '/palabra?texto=';
 Busqueda.PARAM_FLAGS = '&flag=';
 

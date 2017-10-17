@@ -1,3 +1,5 @@
+import { config } from './util';
+
 class Receta {
 
     constructor(props) {
@@ -6,7 +8,7 @@ class Receta {
     }
 
     url() {
-        return `${Receta.PATH_BASE}${Receta.PATH_SEARCH}${this.id}`;
+        return `${config.PATH_BASE}${Receta.PATH_SEARCH}${this.id}`;
     }
 
 }

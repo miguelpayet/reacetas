@@ -1,3 +1,5 @@
+import { config } from './util';
+
 class Ingrediente {
 
     constructor(props) {
@@ -12,12 +14,11 @@ class Ingrediente {
     }
 
     url() {
-        return `${Ingrediente.PATH_BASE}${Ingrediente.PATH_SEARCH}${this.id}`;
+        return `${config.PATH_BASE}${Ingrediente.PATH_SEARCH}${this.id}`;
     }
 
 }
 
-Ingrediente.PATH_BASE = 'http://recetadebrownes.xyz';
 Ingrediente.PATH_SEARCH = '/insumo/recetas?id=';
 Ingrediente.PATH_HREF = '/insumo?id=';
 

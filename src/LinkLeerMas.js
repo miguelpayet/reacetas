@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "./Link.js";
-import {history} from "./util";
+import { history } from "./util";
 
 class LinkLeerMas extends React.Component {
 
@@ -13,11 +13,13 @@ class LinkLeerMas extends React.Component {
     ejecutar(event) {
         switch (this.props.nombre) {
             case "recetas":
-                history.pushState(this.props.busqueda(), "", "/recetas?valor=" + this.props.busqueda.texto);
+                history.pushState(this.props.busqueda(), "", "/recetas?valor=" + this.props.busqueda().texto);
                 break;
             case "ingredientes":
+                history.pushState(this.props.busqueda(), "", "/recetas?valor=" + this.props.busqueda().texto);
                 break;
             case "categorías":
+                history.pushState(this.props.busqueda(), "", "/recetas?valor=" + this.props.busqueda().texto);
                 break;
             default:
                 console.log("default case");

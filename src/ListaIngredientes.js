@@ -16,8 +16,8 @@ class ListaIngredientes extends React.Component {
         for (let i = 0; i <= lista.length; i += 4) {
             const rowid = CrearId("i", lista, i);
             filas.push(<RowIngredientes key={rowid} ingredientes={lista.filter((value, index) => index >= i && index < i + 4)} />);
-            if (filas.length >= 3) {
-                filas.push(<RowLeerMas key="i" nombre="ingredientes" />);
+            if (this.props.verMas && filas.length >= 3) {
+                filas.push(<RowLeerMas key={"i" + i} nombre="ingredientes" />);
                 break;
             }
         }

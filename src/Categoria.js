@@ -1,3 +1,5 @@
+import { config } from './util';
+
 class Categoria {
 
     constructor(props) {
@@ -12,12 +14,11 @@ class Categoria {
     }
 
     url() {
-        return `${Categoria.PATH_BASE}${Categoria.PATH_SEARCH}${this.id}`;
+        return `${config.PATH_BASE}${Categoria.PATH_SEARCH}${this.id}`;
     }
 
 }
 
-Categoria.PATH_BASE = 'http://recetadebrownes.xyz';
 Categoria.PATH_SEARCH = '/categoria/recetas?id=';
 Categoria.PATH_HREF = '/categoria?id=';
 

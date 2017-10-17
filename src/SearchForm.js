@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { history } from './util';
 import Busqueda from './Busqueda.js';
 
@@ -13,7 +12,7 @@ class SearchForm extends React.Component {
     this.publicar = this.publicar.bind(this);
     this.render = this.render.bind(this);
     this.state = { texto: '', recetas: true, ingredientes: false, categorias: false };
-  }
+}
 
   buscar(b) {
     fetch(b.url)
@@ -50,6 +49,16 @@ class SearchForm extends React.Component {
                 <span className="fa fa-search"></span>
               </button>
             </p>
+          </form>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default SearchForm;
+
+/*
             <p className="buscar">
               <label>
                 <input type="checkbox" id="recetas" name="recetas" defaultChecked={this.state.recetas} onChange={this.handleChange} />recetas
@@ -61,11 +70,5 @@ class SearchForm extends React.Component {
                 <input type="checkbox" id="categorias" name="categorias" onChange={this.handleChange} />categorías
                 </label>
             </p>
-          </form>
-        </div>
-      </div>
-    );
-  }
-}
 
-export default SearchForm;
+          */
