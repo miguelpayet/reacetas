@@ -40,7 +40,7 @@ class ListaResultados extends React.Component {
     }
 
     render() {
-        return <div key="raiz" className="resultados">
+        return <div className="PaginaResultados">
             <ListaRecetas busqueda={this.getBusqueda} lista={this.getLista} clase={this.getClase} titulo={true} verMas={true}/>
             <ListaIngredientes busqueda={this.getBusqueda} lista={this.getLista} clase={this.getClase} />
             <ListaCategorias busqueda={this.getBusqueda} lista={this.getLista} clase={this.getClase} />

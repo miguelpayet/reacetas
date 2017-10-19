@@ -31,7 +31,7 @@ class PaginaDetalleIngrediente extends React.Component {
     }
 
     render() {
-        return <div>
+        return <div className="PaginaDetalleIngrediente">
             <h1>recetas que contienen {this.getNombre()}</h1>
             <ListaRecetas busqueda={this.getBusqueda} lista={this.getLista} clase={this.getClase} titulo={false}/>
         </div>

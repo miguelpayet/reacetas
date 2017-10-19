@@ -59,9 +59,7 @@ class App extends Component {
   render() {
     const Elemento = this.state.componente
     return <div className="App container-fluid">
-      <div className="SearchForm">
-        <SearchForm />
-      </div>
+      <SearchForm />
       <Elemento estado={this.getEstado} />
     </div>
   }

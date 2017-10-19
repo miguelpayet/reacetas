@@ -38,9 +38,11 @@ class PaginaRecetas extends React.Component {
     }
 
     render() {
-        return <ListaRecetas busqueda={this.getBusqueda} lista={this.getLista} clase={this.getClase} titulo={true} verMas={false}/>
+        return <div className="PaginaRecetas">
+            <ListaRecetas busqueda={this.getBusqueda} lista={this.getLista} clase={this.getClase} titulo={true} verMas={false} />
+        </div>
     }
-    
+
 }
 
 export default PaginaRecetas;

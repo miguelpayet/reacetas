@@ -9,7 +9,7 @@ class PaginaDetalleReceta extends React.Component {
 
     render() {
         const r = this.props.estado().receta;
-        return  <div className="receta">
+        return  <div className="PaginaDetalleReceta">
                     <h2>{r.nombre}</h2>
                     <div><p>{r.descripcion}</p></div>
                     <div>

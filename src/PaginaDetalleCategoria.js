@@ -32,7 +32,7 @@ class PaginaDetalleCategoria extends React.Component {
     }
 
     render() {
-        return <div>
+        return <div className="PaginaDetalleCategoria">
             <h1>recetas que contienen {this.getNombre()}</h1>
             <ListaRecetas lista={this.getLista} clase={this.getClase} titulo={false}/>
         </div>

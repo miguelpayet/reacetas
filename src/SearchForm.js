@@ -12,7 +12,7 @@ class SearchForm extends React.Component {
     this.publicar = this.publicar.bind(this);
     this.render = this.render.bind(this);
     this.state = { texto: '', recetas: true, ingredientes: false, categorias: false };
-}
+  }
 
   buscar(b) {
     fetch(b.url)
@@ -40,16 +40,18 @@ class SearchForm extends React.Component {
 
   render() {
     return (
-      <div className="row">
-        <div className="col-md-12 col-sm-12">
-          <form onSubmit={this.handleSubmit}>
-            <p className="buscar">
-              <input type="text" id="texto" name="texto" placeholder="¿Qué estás buscando?" onChange={this.handleChange} />
-              <button type="submit" className="btn btn-light btn-xs">
-                <span className="fa fa-search"></span>
-              </button>
-            </p>
-          </form>
+      <div className="SearchForm">
+        <div className="row">
+          <div className="col-md-12 col-sm-12">
+            <form onSubmit={this.handleSubmit}>
+              <p className="buscar">
+                <input type="text" id="texto" name="texto" placeholder="¿Qué estás buscando?" onChange={this.handleChange} />
+                <button type="submit" className="btn btn-light btn-xs">
+                  <span className="fa fa-search"></span>
+                </button>
+              </p>
+            </form>
+          </div>
         </div>
       </div>
     );
@@ -57,18 +59,3 @@ class SearchForm extends React.Component {
 }
 
 export default SearchForm;
-
-/*
-            <p className="buscar">
-              <label>
-                <input type="checkbox" id="recetas" name="recetas" defaultChecked={this.state.recetas} onChange={this.handleChange} />recetas
-                </label>
-              <label>
-                <input type="checkbox" id="ingredientes" name="ingredientes" onChange={this.handleChange} />ingredientes
-                </label>
-              <label>
-                <input type="checkbox" id="categorias" name="categorias" onChange={this.handleChange} />categorías
-                </label>
-            </p>
-
-          */
