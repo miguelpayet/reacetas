@@ -87,3 +87,11 @@ h1.resultado {
 .mostrar {
   visibility: visible;
 }
+
+.PaginaDetalleReceta h2 {
+  font-size: 120%;
+}
+
+.PaginaDetalleReceta .descripcion {
+  font-size: 90%;
+}
