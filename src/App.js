@@ -6,11 +6,11 @@ import React, { Component } from 'react';
 
 import PaginaDetalleCategoria from "./PaginaDetalleCategoria.js";
 import PaginaDetalleIngrediente from "./PaginaDetalleIngrediente.js";
-import PaginaDetalleReceta from "./PaginaDetalleReceta.js";
+import PaginaDetalleReceta from "components/PaginaDetalleReceta.js";
 import PaginaPrincipal from "./PaginaPrincipal.js";
-import PaginaRecetas from "./PaginaRecetas.js";
+import PaginaRecetas from "components/PaginaRecetas.js";
 import PaginaResultados from "./PaginaResultados.js";
-import SearchForm from './SearchForm.js';
+import SearchForm from 'components/SearchForm.js';
 import { history } from './util';
 
 const routes = [

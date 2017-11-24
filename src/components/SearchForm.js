@@ -1,6 +1,6 @@
 import React from 'react';
-import { history } from './util';
-import Busqueda from './Busqueda.js';
+import { history } from '../util';
+import Busqueda from '../Busqueda.js';
 
 class SearchForm extends React.Component {
 
@@ -42,7 +42,7 @@ class SearchForm extends React.Component {
     return (
       <div className="SearchForm">
         <div className="row">
-          <div className="col-md-12 col-sm-12">
+          <div className="col-md-10 col-sm-10">
             <form onSubmit={this.handleSubmit}>
               <p className="buscar">
                 <input type="text" id="texto" name="texto" placeholder="¿Qué estás buscando?" onChange={this.handleChange} />
@@ -51,6 +51,9 @@ class SearchForm extends React.Component {
                 </button>
               </p>
             </form>
+          </div>
+          <div className="col-md-2 col-sm-2">
+            <button type="button">ver lista</button>
           </div>
         </div>
       </div>

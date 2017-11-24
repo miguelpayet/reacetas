@@ -1,4 +1,4 @@
-import ListaRecetas from "./ListaRecetas.js";
+import ListaRecetas from "../ListaRecetas.js";
 import React from 'react';
 
 class PaginaRecetas extends React.Component {
