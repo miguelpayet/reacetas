@@ -10,6 +10,7 @@ class SearchForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.publicar = this.publicar.bind(this);
+    this.publicarError = this.publicarError.bind(this);
     this.render = this.render.bind(this);
     this.state = { texto: '', recetas: true, ingredientes: false, categorias: false };
   }
@@ -18,7 +19,10 @@ class SearchForm extends React.Component {
     fetch(b.url)
       .then(response => response.json())
       .then(result => { b.resultados = result; this.publicar(b) })
-      .catch(e => console.log(e));
+      .catch(e => {
+        console.log(e); 
+        this.publicarError(e)
+      });
   }
 
   handleChange(event) {
@@ -36,6 +40,10 @@ class SearchForm extends React.Component {
 
   publicar(b) {
     history.pushState({ busqueda: b }, "", "/busqueda?valor=" + b.texto);
+  }
+  
+  publicarError(e) {
+    history.pushState({ error: e }, "", "/error/");
   }
 
   render() {

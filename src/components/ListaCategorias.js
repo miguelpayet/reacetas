@@ -1,7 +1,7 @@
 import React from 'react';
 import RowCategorias from './RowCategorias.js';
 import RowLeerMas from "./RowLeerMas.js";
-import CrearId from "./funciones.js";
+import CrearId from "../funciones.js";
 
 class ListaCategorias extends React.Component {
 

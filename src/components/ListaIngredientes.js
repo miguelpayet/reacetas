@@ -1,4 +1,4 @@
-import CrearId from "./funciones.js";
+import CrearId from "../funciones.js";
 import React from 'react';
 import RowIngredientes from './RowIngredientes.js';
 import RowLeerMas from "./RowLeerMas.js";

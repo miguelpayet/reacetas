@@ -1,5 +1,5 @@
 import React from 'react';
-import classnames from '../node_modules/classnames/';
+import classnames from '../../node_modules/classnames/';
 import PropTypes from 'prop-types';
 
 class Link extends React.Component {

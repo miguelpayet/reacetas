@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from "./Link.js";
-import Receta from "./Receta.js";
-import { history } from "./util";
+import Receta from "../Receta.js";
+import { history } from "../util";
 
 class LinkReceta extends React.Component {
 

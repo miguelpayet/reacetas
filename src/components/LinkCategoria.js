@@ -1,25 +1,25 @@
 import React from 'react';
+import Categoria from "../Categoria.js";
+import {history} from "../util";
 import Link from "./Link.js";
-import Ingrediente from "./Ingrediente.js";
-import { history } from "./util";
 
-class LinkIngrediente extends React.Component {
+class LinkCategoria extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { ingrediente: new Ingrediente(props) };
+        this.state = { categoria: new Categoria(props) };
         this.render = this.render.bind(this);
         this.getId = this.getId.bind(this);
         this.ejecutar = this.ejecutar.bind(this);
     }
 
     ejecutar() {
-        fetch(this.state.ingrediente.url())
+        fetch(this.state.categoria.url())
             .then(response => response.json())
             .then(result => 
                 {
-                    const state = { recetas: result, ingrediente: this.state.ingrediente.nombre };
-                    history.pushState(state, "", this.state.ingrediente.href());
+                    const state = { recetas: result, categoria: this.state.categoria.nombre };
+                    history.pushState(state, "", this.state.categoria.href());
                 }
             )
             .catch(e => {
@@ -33,8 +33,8 @@ class LinkIngrediente extends React.Component {
 
     render() {
         return <div className="col-md-3 col-sm-6">
-            <div className="ingrediente">
-                <Link ejecutar={this.ejecutar} href={this.state.ingrediente.href()}>
+            <div className="categoria">
+                <Link ejecutar={this.ejecutar} href={this.state.categoria.href()}>
                     <h2>{this.props.nombre}</h2>
                 </Link>
             </div>
@@ -43,4 +43,4 @@ class LinkIngrediente extends React.Component {
 
 }
 
-export default LinkIngrediente;
+export default LinkCategoria;

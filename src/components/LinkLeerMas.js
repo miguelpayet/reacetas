@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "./Link.js";
-import { history } from "./util";
+import { history } from "../util";
 
 class LinkLeerMas extends React.Component {
 
