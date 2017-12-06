@@ -2,17 +2,17 @@ import './css/App.css';
 import './css/bootstrap.min.css';
 import './css/font-awesome.min.css';
 
+import PaginaDetalleCategoria from "./components/PaginaDetalleCategoria.js";
+import PaginaDetalleIngrediente from "./components/PaginaDetalleIngrediente.js";
+import PaginaDetalleReceta from "./components/PaginaDetalleReceta.js";
+import PaginaError from "./components/PaginaError.js";
+import PaginaPrincipal from "./components/PaginaPrincipal.js";
+import PaginaRecetas from "./components/PaginaRecetas.js";
+import PaginaResultados from "./components/PaginaResultados.js";
 import React, { Component } from 'react';
-
+import SearchForm from './components/SearchForm.js';
 import { history } from './util';
-import PaginaDetalleCategoria from "components/PaginaDetalleCategoria.js";
-import PaginaDetalleIngrediente from "components/PaginaDetalleIngrediente.js";
-import PaginaDetalleReceta from "components/PaginaDetalleReceta.js";
-import PaginaError from "components/PaginaError.js";
-import PaginaPrincipal from "components/PaginaPrincipal.js";
-import PaginaRecetas from "components/PaginaRecetas.js";
-import PaginaResultados from "components/PaginaResultados.js";
-import SearchForm from 'components/SearchForm.js';
+import Router from "./util/Router.js";
 
 const routes = [
   { path: /\/busqueda\?valor=.*/, componente: PaginaResultados },
@@ -28,11 +28,13 @@ class App extends Component {
 
   constructor(props) {
     super(props);
+    this.router = new Router(routes);
     this.componentDidMount = this.componentDidMount.bind(this);
     this.getEstado = this.getEstado.bind(this);
+    this.getLista = this.getLista.bind(this);
     this.historyCallback = this.historyCallback.bind(this);
     this.render = this.render.bind(this);
-    this.state = { componente: PaginaPrincipal, recetas: [], receta: {} };
+    this.state = { componente: PaginaPrincipal, recetas: [], receta: {}, lista: {} };
   }
 
   componentDidMount() {
@@ -49,12 +51,14 @@ class App extends Component {
     return this.state;
   }
 
+  getLista() {
+    return this.state.lista;
+  }
+
   historyCallback(state, title, href) {
-    for (let i = 0; i < routes.length; i++) {
-      if (routes[i].path.test(document.location.href)) {
-        this.setState(Object.assign({ componente: routes[i].componente }, state));
-        break;
-      }
+    const ele = this.router.resolver(document.location.href);
+    if (ele !== undefined) {
+      this.setState(Object.assign({ componente: ele.componente }, state));
     }
   }
 

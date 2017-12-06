@@ -21,7 +21,7 @@ class SearchForm extends React.Component {
       .then(result => { b.resultados = result; this.publicar(b) })
       .catch(e => {
         console.log(e); 
-        this.publicarError(e)
+        this.publicarError(e.message)
       });
   }
 

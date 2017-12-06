@@ -10,7 +10,7 @@
                 return {componente: this.rutas[i].componente}
             }
           }
-      
+      return undefined;
     }
 
   }
