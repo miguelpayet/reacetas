@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "classnames": "2.2.5",
     "history": "^4.7.2",
     "isexe": "^2.0.0",
-    "react": "^16.0.0",
+    "react": "^16.2.0",
     "react-dom": "^16.0.0",
-    "react-scripts": "1.0.14",
-    "classnames": "2.2.5"
+    "react-scripts": "1.0.14"
   },
   "scripts": {
     "start": "react-scripts start",
