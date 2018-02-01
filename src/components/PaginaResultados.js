@@ -41,8 +41,9 @@ class ListaResultados extends React.Component {
 
     getResultados() {
         const state = this.props.estado();
-        if (state.busqueda.resultados.code !== 200) {
-            history.pushState({ error: "error al obtener búsqueda" }, "", "/error/");
+        const resultado = state.busqueda.status;
+        if (resultado !== 200) {
+            history.pushState({ error: "error al obtener búsqueda - código " + resultado }, "", "/error/");
             return -1;
         } else {
             return state.busqueda.resultados;

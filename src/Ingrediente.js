@@ -14,12 +14,13 @@ class Ingrediente {
     }
 
     url() {
-        return `${config.PATH_BASE}${Ingrediente.PATH_SEARCH}${this.id}`;
+        const _url = `${config.PATH_BASE}${Ingrediente.PATH_SEARCH}${this.id}`;
+        return _url;
     }
 
 }
 
-Ingrediente.PATH_SEARCH = '/insumo/recetas?id=';
+Ingrediente.PATH_SEARCH = '/insumo/recetas/';
 Ingrediente.PATH_HREF = '/insumo?id=';
 
 export default Ingrediente;

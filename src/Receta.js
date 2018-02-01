@@ -14,6 +14,6 @@ class Receta {
 }
 
 Receta.PATH_BASE = 'http://recetadebrownes.xyz';
-Receta.PATH_SEARCH = '/receta?id=';
+Receta.PATH_SEARCH = '/receta/id/';
 
 export default Receta

@@ -17,9 +17,21 @@ class LinkReceta extends React.Component {
     ejecutar() {
         const r = new Receta(this.props);
         fetch(r.url())
-            .then(response => response.json())
-            .then(result => history.pushState({ receta: result }, "", this.getUrl()))
-            .catch(e => console.log(e));
+            .then(response => {
+                const state = {status: response.status};
+                if (state.status !== 200) {
+                    throw new Error("Estado: " + state.status + " - " + response.statusText);
+                }
+                response.json().then(data => {
+                    state.receta = data;
+                    history.pushState(state, "", this.getUrl());
+                });
+            })
+            .catch(e => {
+                console.log(e);
+                history.pushState({ error: e }, "", "/error/");
+            }
+        );
     }
 
     handleClick() {

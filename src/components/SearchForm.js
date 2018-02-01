@@ -16,9 +16,15 @@ class SearchForm extends React.Component {
   }
 
   buscar(b) {
+    const _this = this;
     fetch(b.url)
-      .then(response => response.json())
-      .then(result => { b.resultados = result; this.publicar(b) })
+      .then(function(response) {
+        b.status = response.status;
+        response.json().then(function(data) {
+          b.resultados = data
+          _this.publicar(b)
+          });
+        })
       .catch(e => {
         console.log(e); 
         this.publicarError(e.message)
