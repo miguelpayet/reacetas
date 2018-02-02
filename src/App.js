@@ -1,6 +1,7 @@
 import './css/App.css';
 import './css/bootstrap.min.css';
 import './css/font-awesome.min.css';
+import 'babel-polyfill';
 
 import PaginaDetalleCategoria from "./components/PaginaDetalleCategoria.js";
 import PaginaDetalleIngrediente from "./components/PaginaDetalleIngrediente.js";
@@ -10,9 +11,9 @@ import PaginaPrincipal from "./components/PaginaPrincipal.js";
 import PaginaRecetas from "./components/PaginaRecetas.js";
 import PaginaResultados from "./components/PaginaResultados.js";
 import React, { Component } from 'react';
+import Router from "./util/Router.js";
 import SearchForm from './components/SearchForm.js';
 import { history } from './util';
-import Router from "./util/Router.js";
 
 const routes = [
   { path: /\/busqueda\?valor=.*/, componente: PaginaResultados },
