@@ -17,16 +17,28 @@ class PaginaDetalleReceta extends React.Component {
                 <div className="col-md-4 col-sm-4">
                     <button type="button">Añadir a lista</button>
                 </div>
-                <div className="descripcion"><p>{r.descripcion}</p></div>
-                <div className="ingredientes">
-                    <h2>ingredientes</h2>
-                    <ul>
-                        {r.ingredientes.map(i => <li id={i}>{i}</li>)}
-                    </ul>
+            </div>
+            <div className="row">
+                <div className="col-md-12">
+                    <div className="descripcion"><p>{r.descripcion}</p></div>
                 </div>
-                <div className="instrucciones">
-                    <h2>instrucciones</h2>
-                    <div dangerouslySetInnerHTML={{ __html: r.instrucciones }}></div>
+            </div>
+            <div className="row">
+                <div className="col-md-12">
+                    <div className="ingredientes">
+                        <h2>ingredientes</h2>
+                        <ul>
+                            {r.ingredientes.map(i => <li id={i}>{i}</li>)}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div className="row">
+                <div className="col-md-12">
+                    <div className="instrucciones">
+                        <h2>instrucciones</h2>
+                        <div dangerouslySetInnerHTML={{ __html: r.instrucciones }}></div>
+                    </div>
                 </div>
             </div>
         </div>
