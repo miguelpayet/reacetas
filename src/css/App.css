@@ -94,4 +94,17 @@ h1.resultado {
 
 .PaginaDetalleReceta .descripcion {
   font-size: 90%;
+  margin: 0 10%;
+}
+
+.PaginaDetalleReceta .ingredientes {
+ 
+}
+
+.PaginaDetalleReceta .ingredientes li {
+  border-bottom: 1px dotted #000;
+}
+
+.PaginaDetalleReceta h2 {
+  border-bottom: 1px solid #000;
 }
